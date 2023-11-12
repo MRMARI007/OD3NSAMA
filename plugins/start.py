@@ -1,3 +1,4 @@
+⚚ 𝐓𝐑𝐈𝐏𝐏𝐘 ❄️:
 #(©)CodeXBotz
 
 
@@ -5,13 +6,13 @@
 
 import os
 import asyncio
-from pyrogram import Client, filters, __version__
+from pyrogram import Client, filters, version
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from config import ADMINS, OWNER_ID, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
@@ -92,7 +93,6 @@ async def start_command(client: Client, message: Message):
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
                 ]
             ]
-        )
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
@@ -105,14 +105,14 @@ async def start_command(client: Client, message: Message):
             disable_web_page_preview = True,
             quote = True
         )
-        return
+        return   
 
-    
+
 #=====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"<b>Processing ....</b>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
+REPLY_ERROR = """<code>Use this command as a reply to any telegram message with out any spaces.</code>"""
 
 #=====================================================================================##
 
@@ -122,9 +122,8 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(
-                "Join Channel",
-                url = client.invitelink)
+            InlineKeyboardButton(text=" Join Channel ", url=client.invitelink),
+            InlineKeyboardButton(text=" Join Channel ", url=client.invitelink2),
         ]
     ]
     try:
@@ -169,7 +168,7 @@ async def send_text(client: Bot, message: Message):
         deleted = 0
         unsuccessful = 0
         
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
+        pls_wait = await message.reply("<i>Broadcast ho rha till then FUCK OFF </i>")
         for chat_id in query:
             try:
                 await broadcast_msg.copy(chat_id)
