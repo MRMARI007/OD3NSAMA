@@ -1,4 +1,3 @@
- ⚚ 𝐓𝐑𝐈𝐏𝐏𝐘 ❄️:
 #(©)AnimeXyz
 
 import base64
