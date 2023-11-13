@@ -1,4 +1,3 @@
-
 #(©)AnimeXyz
 
 from aiohttp import web
