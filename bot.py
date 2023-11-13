@@ -1,4 +1,4 @@
-⚚ 𝐓𝐑𝐈𝐏𝐏𝐘 ❄️:
+
 #(©)AnimeXyz
 
 from aiohttp import web
